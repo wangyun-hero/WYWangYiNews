@@ -76,6 +76,7 @@ static NSString *cellID = @"cellID";
 
 -(void)loadData
 {
+    NSLog(@"测试git提交");
     NSArray *array = @[@"新闻",@"军事",@"人文",@"科技",@"农业",@"天文",@"篮球",@"足球",@"乒乓球",@"橄榄球",@"棒球",@"地球",@"月球",@"水球",@"德玛西亚"];
     for (int i = 0; i < 15; i++) {
         WYHomeLabelModel *model = [[WYHomeLabelModel alloc] init];
