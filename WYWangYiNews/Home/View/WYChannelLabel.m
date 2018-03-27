@@ -17,12 +17,14 @@
     label.font = [UIFont systemFontOfSize:14];
     return label;
 }
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+
+-(void)setScale:(CGFloat)scale
+{
+    _scale = scale;
+    [self setTextColor:[UIColor colorWithRed:scale green:0 blue:0 alpha:1]];
+    
+    CGFloat sc = 14 + (18 - 14) * scale;
+    self.transform = CGAffineTransformMakeScale(sc/14, sc/14);
 }
-*/
 
 @end

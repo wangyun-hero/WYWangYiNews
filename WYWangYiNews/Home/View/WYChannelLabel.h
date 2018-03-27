@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "WYHomeLabelModel.h"
 @interface WYChannelLabel : UILabel
+@property(nonatomic,assign) CGFloat scale;
 +(instancetype)labelWithModel:(WYHomeLabelModel *)labelMoel;
 @end
