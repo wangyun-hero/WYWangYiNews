@@ -26,6 +26,9 @@
     WYChannelLabel *label = [self.scrollview.subviews objectAtIndex:index];
     [label setTextColor:[UIColor colorWithRed:scale green:0 blue:0 alpha:1]];
     
+    CGFloat sc = 14 + (18 - 14) * scale;
+    label.transform = CGAffineTransformMakeScale(sc/14, sc/14);
+    
 }
 
 -(void)setChannelArray:(NSMutableArray *)channelArray
