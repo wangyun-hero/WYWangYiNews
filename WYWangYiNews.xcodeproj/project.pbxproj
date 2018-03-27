@@ -10,6 +10,7 @@
 		010A0E84C451AF531B8D36EB /* libPods-WYWangYiNewsTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3897E67537310E7FE1A6C5 /* libPods-WYWangYiNewsTests.a */; };
 		825217519CF3FCD6499E95F5 /* libPods-WYWangYiNews.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 383AF0C88B775D51E20A29C5 /* libPods-WYWangYiNews.a */; };
 		B441539B7D9B6CFD48BEC793 /* libPods-WYWangYiNewsUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B5AA076388233A99FAAD369 /* libPods-WYWangYiNewsUITests.a */; };
+		CB7B4517206A18EF0009B631 /* WYHomeNewsListController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7B4516206A18EF0009B631 /* WYHomeNewsListController.m */; };
 		CBBA20A32060ADF9001F3FDE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBA20A22060ADF9001F3FDE /* AppDelegate.m */; };
 		CBBA20A62060ADF9001F3FDE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBA20A52060ADF9001F3FDE /* ViewController.m */; };
 		CBBA20A92060ADF9001F3FDE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBBA20A72060ADF9001F3FDE /* Main.storyboard */; };
@@ -25,7 +26,7 @@
 		CBBA20E62060E795001F3FDE /* WYChannelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBBA20E52060E795001F3FDE /* WYChannelView.xib */; };
 		CBBA20EA206100AE001F3FDE /* WYHomeLabelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBA20E9206100AE001F3FDE /* WYHomeLabelModel.m */; };
 		CBBA20ED20610BDC001F3FDE /* WYChannelLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBA20EC20610BDC001F3FDE /* WYChannelLabel.m */; };
-		CBBA20F020610C20001F3FDE /* UILabel+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBA20EE20610C20001F3FDE /* UILabel+Addition.m */; };
+		CBBA20F320622CBF001F3FDE /* UILabel+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = CBBA20F120622CBF001F3FDE /* UILabel+Addition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		7F1BB7E138BBB337F682676C /* Pods-WYWangYiNewsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WYWangYiNewsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WYWangYiNewsUITests/Pods-WYWangYiNewsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		987498DE3F1B5935A3DD8F2E /* Pods-WYWangYiNewsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WYWangYiNewsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WYWangYiNewsTests/Pods-WYWangYiNewsTests.release.xcconfig"; sourceTree = "<group>"; };
 		A1D92DDEEDFA42F058C6698B /* Pods-WYWangYiNewsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WYWangYiNewsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WYWangYiNewsTests/Pods-WYWangYiNewsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		CB7B4515206A18EF0009B631 /* WYHomeNewsListController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYHomeNewsListController.h; sourceTree = "<group>"; };
+		CB7B4516206A18EF0009B631 /* WYHomeNewsListController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYHomeNewsListController.m; sourceTree = "<group>"; };
 		CBBA209E2060ADF9001F3FDE /* WYWangYiNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WYWangYiNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBBA20A12060ADF9001F3FDE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CBBA20A22060ADF9001F3FDE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -84,8 +87,8 @@
 		CBBA20E9206100AE001F3FDE /* WYHomeLabelModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYHomeLabelModel.m; sourceTree = "<group>"; };
 		CBBA20EB20610BDC001F3FDE /* WYChannelLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WYChannelLabel.h; sourceTree = "<group>"; };
 		CBBA20EC20610BDC001F3FDE /* WYChannelLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WYChannelLabel.m; sourceTree = "<group>"; };
-		CBBA20EE20610C20001F3FDE /* UILabel+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UILabel+Addition.m"; path = "../../../../Downloads/wangyixinwen-master/网易新闻/Classes/Home/Tools/Additions/UILabel+Addition.m"; sourceTree = "<group>"; };
-		CBBA20EF20610C20001F3FDE /* UILabel+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UILabel+Addition.h"; path = "../../../../Downloads/wangyixinwen-master/网易新闻/Classes/Home/Tools/Additions/UILabel+Addition.h"; sourceTree = "<group>"; };
+		CBBA20F120622CBF001F3FDE /* UILabel+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Addition.m"; sourceTree = "<group>"; };
+		CBBA20F220622CBF001F3FDE /* UILabel+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Addition.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +233,8 @@
 			children = (
 				CBBA20DA2060B1F5001F3FDE /* WYHomeViewController.h */,
 				CBBA20DB2060B1F5001F3FDE /* WYHomeViewController.m */,
+				CB7B4515206A18EF0009B631 /* WYHomeNewsListController.h */,
+				CB7B4516206A18EF0009B631 /* WYHomeNewsListController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -237,8 +242,8 @@
 		CBBA20DD2060B448001F3FDE /* Aditions */ = {
 			isa = PBXGroup;
 			children = (
-				CBBA20EF20610C20001F3FDE /* UILabel+Addition.h */,
-				CBBA20EE20610C20001F3FDE /* UILabel+Addition.m */,
+				CBBA20F220622CBF001F3FDE /* UILabel+Addition.h */,
+				CBBA20F120622CBF001F3FDE /* UILabel+Addition.m */,
 				CBBA20DE2060B4E8001F3FDE /* UIColor+Addition.h */,
 				CBBA20DF2060B4E8001F3FDE /* UIColor+Addition.m */,
 			);
@@ -557,6 +562,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB7B4517206A18EF0009B631 /* WYHomeNewsListController.m in Sources */,
 				CBBA20A62060ADF9001F3FDE /* ViewController.m in Sources */,
 				CBBA20E42060E76B001F3FDE /* WYChannelView.m in Sources */,
 				CBBA20ED20610BDC001F3FDE /* WYChannelLabel.m in Sources */,
@@ -565,7 +571,7 @@
 				CBBA20E02060B4E8001F3FDE /* UIColor+Addition.m in Sources */,
 				CBBA20D72060AF4F001F3FDE /* WYTabBarController.m in Sources */,
 				CBBA20DC2060B1F5001F3FDE /* WYHomeViewController.m in Sources */,
-				CBBA20F020610C20001F3FDE /* UILabel+Addition.m in Sources */,
+				CBBA20F320622CBF001F3FDE /* UILabel+Addition.m in Sources */,
 				CBBA20EA206100AE001F3FDE /* WYHomeLabelModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

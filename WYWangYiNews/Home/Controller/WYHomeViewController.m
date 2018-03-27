@@ -11,6 +11,7 @@
 #import "WYChannelView.h"
 #import <Masonry.h>
 #import "UIColor+Addition.h"
+#import "WYHomeNewsListController.h"
 static NSString *cellID = @"cellID";
 @interface WYHomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic,strong) NSMutableArray *dataArray;
@@ -103,6 +104,16 @@ static NSString *cellID = @"cellID";
 {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
     cell.contentView.backgroundColor = [UIColor randomColor];
+    // 添加子控制器
+    WYHomeNewsListController *vc = [[WYHomeNewsListController alloc]init];
+    // 添加view
+    [cell.contentView addSubview:vc.view];
+    //    约束
+    [vc.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(cell.contentView);
+    }];
+    [self addChildViewController:vc];
+    
     return cell;
 }
 

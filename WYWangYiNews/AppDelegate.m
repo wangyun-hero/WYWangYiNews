@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "ViewController.h"
 #import "WYTabBarController.h"
+#import "WYHomeNewsListController.h"
 @interface AppDelegate ()
 
 @end
@@ -20,6 +21,7 @@
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     WYTabBarController *tab = [[WYTabBarController alloc]init];
     tab.tabBar.tintColor = [UIColor redColor];
+//    WYHomeNewsListController *vc = [[WYHomeNewsListController alloc]init];
     self.window.rootViewController = tab;
     [self.window makeKeyAndVisible];
     return YES;
