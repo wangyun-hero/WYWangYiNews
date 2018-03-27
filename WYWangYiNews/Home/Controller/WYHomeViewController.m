@@ -114,6 +114,16 @@ static NSString *cellID = @"cellID";
 {
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
     cell.contentView.backgroundColor = [UIColor randomColor];
+    // 解决content里面view没有移除，重复叠加的问题
+    // 方法一
+//    for (UIView *view  in cell.contentView.subviews) {
+//        [view removeFromSuperview];
+//    }
+    
+    // 方法二
+    [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    
+    
     // 添加子控制器
     WYHomeLabelModel *model = [self.dataArray objectAtIndex:indexPath.row];
     // 避免重复创建
