@@ -11,7 +11,7 @@
 @implementation WYChannelLabel
 +(instancetype)labelWithModel:(WYHomeLabelModel *)labelMoel
 {
-    WYChannelLabel *label = [WYChannelLabel labelWithText:labelMoel.title andTextColor:[UIColor redColor] andFontSize:18];
+    WYChannelLabel *label = [WYChannelLabel labelWithText:labelMoel.title andTextColor:[UIColor blackColor] andFontSize:18];
     // 计算好大小之后变为14
     [label sizeToFit];
     label.font = [UIFont systemFontOfSize:14];

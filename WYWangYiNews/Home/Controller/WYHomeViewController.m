@@ -99,6 +99,25 @@ static NSString *cellID = @"cellID";
     
 }
 
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+//    NSLog(@"%@",NSStringFromCGPoint(scrollView.contentOffset));
+    
+    // 第几页
+    CGFloat ratio = scrollView.contentOffset.x / scrollView.frame.size.width;
+//    NSLog(@"%f",ratio);
+    // 从右往左滑当前页面的索引
+    NSInteger index = ratio / 1;
+
+    // 缩放的比例
+    CGFloat scale = ratio - index;
+    NSLog(@"之前显示的%zd，即将显示的%zd，比例%f",index,index+1,scale);
+    // 设置下一个页面的缩放
+    [self.channelView setScale:scale withIndex:index+1];
+    // 设置当前页面的缩放
+    [self.channelView setScale:1-scale withIndex:index];
+}
+
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
     return 1;

@@ -21,6 +21,13 @@
                                         options:nil] lastObject];
 }
 
+-(void)setScale:(CGFloat)scale withIndex:(NSInteger)index
+{
+    WYChannelLabel *label = [self.scrollview.subviews objectAtIndex:index];
+    [label setTextColor:[UIColor colorWithRed:scale green:0 blue:0 alpha:1]];
+    
+}
+
 -(void)setChannelArray:(NSMutableArray *)channelArray
 {
     _channelArray = channelArray;
@@ -37,7 +44,7 @@
         x += label.frame.size.width + margin;
     }
     self.scrollview.contentSize = CGSizeMake(x, 0);
-    
+    [self setScale:1 withIndex:0];
 }
 
 

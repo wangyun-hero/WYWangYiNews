@@ -20,4 +20,6 @@
 //3 声明代理属性
 @property(nonatomic,weak) id<ChannelViewDelegate>delegate;
 +(instancetype)channelView;
+
+-(void)setScale:(CGFloat)scale withIndex:(NSInteger)index;
 @end
