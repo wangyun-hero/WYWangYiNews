@@ -17,6 +17,8 @@ static NSString *cellID = @"cellID";
 @property(nonatomic,strong) NSMutableArray *dataArray;
 @property(nonatomic,strong) WYChannelView *channelView;
 @property(nonatomic,strong) UICollectionView *collectionView;
+// 防止重复创建控制器，重复添加view
+@property(nonatomic,strong) NSMutableDictionary *dict;
 @end
 
 @implementation WYHomeViewController
@@ -28,6 +30,14 @@ static NSString *cellID = @"cellID";
     
     
     // Do any additional setup after loading the view.
+}
+
+-(NSMutableDictionary *)dict
+{
+    if (!_dict) {
+        _dict = [NSMutableDictionary new];
+    }
+    return _dict;
 }
 
 -(void)setupUI
@@ -105,7 +115,11 @@ static NSString *cellID = @"cellID";
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
     cell.contentView.backgroundColor = [UIColor randomColor];
     // 添加子控制器
-    WYHomeNewsListController *vc = [[WYHomeNewsListController alloc]init];
+    WYHomeLabelModel *model = [self.dataArray objectAtIndex:indexPath.row];
+    // 避免重复创建
+    UIViewController *vc = [self viewControllerWithModel:model];
+    
+//    WYHomeNewsListController *vc = [[WYHomeNewsListController alloc]init];
     // 添加view
     [cell.contentView addSubview:vc.view];
     //    约束
@@ -115,6 +129,17 @@ static NSString *cellID = @"cellID";
     [self addChildViewController:vc];
     
     return cell;
+}
+
+// 从缓存中取控制器
+-(UIViewController *)viewControllerWithModel:(WYHomeLabelModel *)model
+{
+    UIViewController *vc = [self.dict objectForKey:model.title];
+    if (vc == nil) {
+        vc = [[WYHomeNewsListController alloc]init];
+        [self.dict setObject:vc forKey:model.title];
+    }
+    return vc;
 }
 
 -(void)viewDidLayoutSubviews
