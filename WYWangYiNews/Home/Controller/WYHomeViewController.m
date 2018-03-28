@@ -113,10 +113,14 @@ static NSString *cellID = @"cellID";
     // 缩放的比例
     CGFloat scale = ratio - index;
     NSLog(@"之前显示的%zd，即将显示的%zd，比例%f",index,index+1,scale);
-    // 设置下一个页面的缩放
-    [self.channelView setScale:scale withIndex:index+1];
-    // 设置当前页面的缩放
-    [self.channelView setScale:1-scale withIndex:index];
+    // 解决label滑动到最后会数组越界崩溃的问题
+    if (index + 1 < self.dataArray.count) {
+        // 设置下一个页面的缩放
+        [self.channelView setScale:scale withIndex:index+1];
+        // 设置当前页面的缩放
+        [self.channelView setScale:1-scale withIndex:index];
+    }
+    
     
 }
 
