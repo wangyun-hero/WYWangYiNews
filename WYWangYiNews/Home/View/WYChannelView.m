@@ -52,6 +52,16 @@
 -(void)labelClick:(UIGestureRecognizer *)tap
 {
     NSLog(@"label被点击了");
+    for (WYChannelLabel *label in self.scrollview.subviews) {
+        if (label == tap.view) {
+            label.scale = 1;
+        }else
+        {
+            label.scale = 0;
+        }
+    }
+    
+    
 //  4  判断代理属性是否响应
     if ([self.delegate respondsToSelector:@selector(channelView:clickWithIndex:)]) {
         [self.delegate channelView:self clickWithIndex:[self.scrollview.subviews indexOfObject:tap.view]];

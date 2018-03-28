@@ -13,7 +13,7 @@
 #import "UIColor+Addition.h"
 #import "WYHomeNewsListController.h"
 static NSString *cellID = @"cellID";
-@interface WYHomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
+@interface WYHomeViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,ChannelViewDelegate>
 @property(nonatomic,strong) NSMutableArray *dataArray;
 @property(nonatomic,strong) WYChannelView *channelView;
 @property(nonatomic,strong) UICollectionView *collectionView;
@@ -45,6 +45,7 @@ static NSString *cellID = @"cellID";
     WYChannelView *channelView = [WYChannelView channelView];
     [self.view addSubview:channelView];
     self.channelView = channelView;
+    channelView.delegate = self;
     channelView.channelArray = self.dataArray;
 //    self.channelView.frame = CGRectMake(0, 100, self.view.bounds.size.width, 40);
     [self.channelView  mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -116,6 +117,14 @@ static NSString *cellID = @"cellID";
     [self.channelView setScale:scale withIndex:index+1];
     // 设置当前页面的缩放
     [self.channelView setScale:1-scale withIndex:index];
+    
+}
+
+-(void)channelView:(WYChannelView *)channelView clickWithIndex:(NSInteger)index
+{
+    NSLog(@"第%ld个label被点击",(long)index);
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
+    [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:false];
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
