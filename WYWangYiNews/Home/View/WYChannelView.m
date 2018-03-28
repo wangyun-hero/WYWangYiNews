@@ -26,6 +26,23 @@
     WYChannelLabel *label = [self.scrollview.subviews objectAtIndex:index];
     label.scale = scale;
     
+    // 点击label，让其滚动到中间
+    if (scale == 1) {
+        CGFloat contentOffset = label.center.x - self.scrollview.frame.size.width / 2;
+        CGFloat minoffSet = 0;
+        CGFloat maxoffSet = self.scrollview.contentSize.width - self.scrollview.frame.size.width;
+        if (contentOffset < minoffSet) {
+            contentOffset = 0;
+        }else if (contentOffset > maxoffSet)
+        {
+            contentOffset = maxoffSet;
+        }
+        [self.scrollview setContentOffset:CGPointMake(contentOffset, 0) animated:YES];
+        
+    }
+    
+    
+    
 }
 
 -(void)setChannelArray:(NSMutableArray *)channelArray
